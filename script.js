@@ -9,18 +9,28 @@ const createNewItem = () => {
   const newItem = document.createElement('li');
   const itemText = document.createElement('span');
   const deleteButton = document.createElement('input');
+  const doneButton = document.createElement('input');
 
   itemText.innerText = input.value;
   deleteButton.value = '削除';
   deleteButton.type = 'button';
+  doneButton.value = '完了';
+  doneButton.type = 'button';
 
   newItem.append(itemText);
+  newItem.append(doneButton);
   newItem.append(deleteButton);
+  newItem.classList.add('list-item');
   fragment.append(newItem);
   list.append(fragment);
 
   deleteButton.addEventListener('click', () => {
     newItem.remove();
+  });
+
+  doneButton.addEventListener('click', () => {
+    newItem.classList.add('-done');
+    doneButton.remove();
   });
 }
 

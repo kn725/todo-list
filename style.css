@@ -1,0 +1,7 @@
+.list-item span {
+  margin-right: 10px;
+}
+
+.-done {
+  text-decoration: line-through
+}
